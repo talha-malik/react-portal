@@ -1,0 +1,16 @@
+/*Main Search Wrap Css Start*/
+    .search-wrap {border-bottom:1px solid #e3e3e3;}
+    [dir="rtl"] .search-wrap {border-bottom:1px solid #e3e3e3;font-family: "IRANSans";}
+    .search-wrap {position: fixed; top:0; width: 100%; height:60px; margin-top: 60px; z-index: 101;}
+    .search-wrap {background-color: #222222;}
+    .search-wrap .search-filter {float: left; width: 80%; margin-left: 10%; text-align: left; margin-top: 5px;}
+    .search-wrap .search-filter .comboBox {
+        height: 40px;
+        width: 240px;
+    }
+    .search-wrap .search-filter .textInput {
+        height: 35px;
+        width: 240px;
+    }
+    .search-wrap .search-filter .propertyType{width:180px;}
+/*Main Search Wrap Css End*/
