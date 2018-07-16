@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 import Header from './components/Header/Header.js';
 import SearchBox from './components/SearchBox/SearchBox';
-import ListingCard from './components/ListingCard/ListingCard'
+import Listings from './components/Listing/Listings/Listings';
 
 class App extends Component {
+  state = {
+        counter: 0
+    }
+
   render() {
+    console.log('APP JS RENDER',this.props.ctr);
     return (
       <div className="App">
         <Header/>
         <SearchBox/>
-        <ListingCard/>
+        <Listings/>
+        {/*<span>{this.props.ctr}</span>
+        <button onClick={this.props.onIncrementCounter} className=" inc-button">INCREMENT</button>*/}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        ctr: state.counter
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onIncrementCounter: () => dispatch({type: 'INC'})
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

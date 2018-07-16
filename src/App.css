@@ -29,6 +29,9 @@
 .left {
     float: left;
 }
+.right {
+    float: right;
+}
 
 .m0 {
     margin: 0 !important;
@@ -55,6 +58,10 @@ ul {
     text-align: center;
     margin-top: -7px;
     letter-spacing: .5px;
+}
+
+.inc-button{
+  position: relative;
 }
 
 @keyframes App-logo-spin {

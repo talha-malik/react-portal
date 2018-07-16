@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux';
 import './SearchBox.css'
-import ListingCard from '../ListingCard/ListingCard';
 
 class SearchBox extends React.Component{
 
@@ -8,7 +8,6 @@ class SearchBox extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {};
-		this.listingCard = new ListingCard();
 		this.handleChange = this.handleChange.bind(this);
 	}
 
@@ -18,12 +17,17 @@ class SearchBox extends React.Component{
 		this.setState({[event.target.name] : event.target.value});
 	}
 
+	HandleSubmit = (event) =>{
+		event.preventDefault();
+		this.props.onSubmitSearch();
+	}
+
 	
 
 	render () {
 		return (
 			<div className="search-wrap">
-				<form className="advance_search" onSubmit={(event) => this.listingCard.getSearchListings(event,this.state)}>
+				<form className="advance_search" onSubmit={this.props.onSubmitSearch} onClick={this.HandleSubmit}>
 					<div className="search-filter">
 						<select name="Purpose" className="comboBox" name="purpose" onChange={this.handleChange}>
                             <option value="">Select Purpose</option>
@@ -63,4 +67,12 @@ class SearchBox extends React.Component{
 	}
 }
 
-export default SearchBox;
+const mapDispatchToProps = dispatch => {
+    return {
+        onSubmitSearch: () => dispatch({type: 'SEARCH'})
+    };
+};
+
+export default connect(null,mapDispatchToProps)(SearchBox);
+
+// export default SearchBox;

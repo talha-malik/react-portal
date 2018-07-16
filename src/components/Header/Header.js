@@ -11,7 +11,7 @@ const header = (props)=> {
 				<nav className="right">
 			        <ul>
 				        <li className="left m0">
-				        	<a onClick={popup} href="#" className="button">Login</a>
+				        	<a onClick={(props) => popup(props)} href="#" className="button">Login</a>
 				        </li>
 			        </ul>
 	        	</nav>
