@@ -5,6 +5,8 @@ import Header from './components/Header/Header.js';
 import SearchBox from './components/SearchBox/SearchBox';
 import Listings from './components/Listing/Listings/Listings';
 
+import {Routes} from './components/Router/Routes';
+
 class App extends Component {
   state = {
         counter: 0
@@ -17,6 +19,7 @@ class App extends Component {
         <Header/>
         <SearchBox/>
         <Listings/>
+        <Routes/>
         {/*<span>{this.props.ctr}</span>
         <button onClick={this.props.onIncrementCounter} className=" inc-button">INCREMENT</button>*/}
       </div>
