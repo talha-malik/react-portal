@@ -17,8 +17,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <SearchBox/>
-        <Listings/>
         <Routes/>
         {/*<span>{this.props.ctr}</span>
         <button onClick={this.props.onIncrementCounter} className=" inc-button">INCREMENT</button>*/}
@@ -39,4 +37,5 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
